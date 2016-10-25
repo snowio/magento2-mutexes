@@ -1,0 +1,23 @@
+{
+    "name": "snowio/magento2-product-save-mutex",
+    "license": "MIT",
+    "description": "A Magento 2 module that provides a mutex lock during product saves",
+    "type": "magento2-module",
+    "authors": [
+        {
+            "name": "Alexander Wanyoike",
+            "email": "amw@amp.co"
+        }
+    ],
+    "require": {
+        "php": ">=5.6",
+        "magento/module-catalog": "^100|^101",
+        "snowio/magento2-lock": "^1.0.0"
+    },
+    "autoload": {
+        "files": [ "registration.php" ],
+        "psr-4": {
+            "SnowIO\\ProductSaveMutex\\": ""
+        }
+    }
+}
