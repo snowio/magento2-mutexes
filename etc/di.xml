@@ -5,7 +5,7 @@
     </type>
     <type name="SnowIO\Mutexes\Plugin\CategoryRepositoryMutexPlugin">
         <arguments>
-            <argument name="lockWaitTimeout" xsi:type="int">1</argument>
+            <argument name="lockWaitTimeout" xsi:type="number">1</argument>
         </arguments>
     </type>
 
@@ -14,7 +14,7 @@
     </type>
     <type name="SnowIO\Mutexes\Plugin\CategoryLinkRepositoryMutexPlugin">
         <arguments>
-            <argument name="lockWaitTimeout" xsi:type="int">1</argument>
+            <argument name="lockWaitTimeout" xsi:type="number">1</argument>
         </arguments>
     </type>
 
@@ -23,7 +23,7 @@
     </type>
     <type name="SnowIO\Mutexes\Plugin\ProductRepositoryMutexPlugin">
         <arguments>
-            <argument name="lockWaitTimeout" xsi:type="int">1</argument>
+            <argument name="lockWaitTimeout" xsi:type="number">1</argument>
         </arguments>
     </type>
 </config>
