@@ -1,27 +1,27 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <type name="Magento\Catalog\Api\CategoryRepositoryInterface">
-        <plugin name="CategoryRepositoryMutexPlugin" type="SnowIO\CategorySaveMutex\Plugin\CategoryRepositoryMutexPlugin" disabled="false" />
+        <plugin name="CategoryRepositoryMutexPlugin" type="SnowIO\Mutexes\Plugin\CategoryRepositoryMutexPlugin" disabled="false" />
     </type>
-    <type name="SnowIO\CategorySaveMutex\Plugin\CategoryRepositoryMutexPlugin">
+    <type name="SnowIO\Mutexes\Plugin\CategoryRepositoryMutexPlugin">
         <arguments>
             <argument name="lockWaitTimeout" xsi:type="int">1</argument>
         </arguments>
     </type>
 
     <type name="Magento\Catalog\Api\CategoryLinkRepositoryInterface">
-        <plugin name="CategoryLinkRepositoryMutexPlugin" type="SnowIO\CategorySaveMutex\Plugin\CategoryLinkRepositoryMutexPlugin" disabled="false" />
+        <plugin name="CategoryLinkRepositoryMutexPlugin" type="SnowIO\Mutexes\Plugin\CategoryLinkRepositoryMutexPlugin" disabled="false" />
     </type>
-    <type name="SnowIO\CategorySaveMutex\Plugin\CategoryLinkRepositoryMutexPlugin">
+    <type name="SnowIO\Mutexes\Plugin\CategoryLinkRepositoryMutexPlugin">
         <arguments>
             <argument name="lockWaitTimeout" xsi:type="int">1</argument>
         </arguments>
     </type>
 
     <type name="Magento\Catalog\Api\ProductRepositoryInterface">
-        <plugin name="ProductRepositoryMutexPlugin" type="SnowIO\ProductSaveMutex\Plugin\ProductRepositoryMutexPlugin" disabled="false" />
+        <plugin name="ProductRepositoryMutexPlugin" type="SnowIO\Mutexes\Plugin\ProductRepositoryMutexPlugin" disabled="false" />
     </type>
-    <type name="SnowIO\CategorySaveMutex\Plugin\ProductRepositoryMutexPlugin">
+    <type name="SnowIO\Mutexes\Plugin\ProductRepositoryMutexPlugin">
         <arguments>
             <argument name="lockWaitTimeout" xsi:type="int">1</argument>
         </arguments>

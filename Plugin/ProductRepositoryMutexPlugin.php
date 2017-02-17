@@ -1,6 +1,6 @@
 <?php
 
-namespace SnowIO\ProductSaveMutex\Plugin;
+namespace SnowIO\Mutexes\Plugin;
 
 use Magento\Catalog\Api\Data\ProductInterface;
 use Magento\Catalog\Api\ProductRepositoryInterface;

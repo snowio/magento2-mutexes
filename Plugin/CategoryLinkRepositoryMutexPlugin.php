@@ -1,6 +1,6 @@
 <?php
 
-namespace SnowIO\CategorySaveMutex\Plugin;
+namespace SnowIO\Mutexes\Plugin;
 
 use Magento\Catalog\Api\CategoryLinkRepositoryInterface;
 use Magento\Catalog\Api\Data\CategoryProductLinkInterface;
