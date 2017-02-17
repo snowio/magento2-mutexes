@@ -6,14 +6,15 @@ use Magento\Catalog\Api\Data\ProductInterface;
 use Magento\Catalog\Api\ProductRepositoryInterface;
 use SnowIO\Lock\Api\LockService;
 
-class ProductRepositoryWithLockingPlugin
+class ProductRepositoryMutexPlugin
 {
-    /** @var LockService */
     private $lockService;
+    private $lockWaitTimeout;
 
-    public function __construct(LockService $lockService)
+    public function __construct(LockService $lockService, int $lockWaitTimeout)
     {
         $this->lockService = $lockService;
+        $this->lockWaitTimeout = $lockWaitTimeout;
     }
 
     public function aroundSave(
@@ -22,9 +23,9 @@ class ProductRepositoryWithLockingPlugin
         ProductInterface $product,
         $saveOptions = false
     ) {
-        $lockName = $this->getLockName($product->getSku());
+        $lockName = "product.{$product->getSku()}";
 
-        if (!$this->lockService->acquireLock($lockName, 0)) {
+        if (!$this->lockService->acquireLock($lockName, $this->lockWaitTimeout)) {
             throw new \RuntimeException('A conflict occurred while saving the product. No changes were applied.');
         }
 
@@ -33,10 +34,5 @@ class ProductRepositoryWithLockingPlugin
         } finally {
             $this->lockService->releaseLock($lockName);
         }
-    }
-
-    private function getLockName($sku)
-    {
-        return "product_save.$sku";
     }
 }
