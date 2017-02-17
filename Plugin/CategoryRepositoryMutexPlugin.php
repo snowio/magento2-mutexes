@@ -22,7 +22,13 @@ class CategoryRepositoryMutexPlugin
         callable $proceed,
         CategoryInterface $category
     ) {
-        $lockName = "category.{$category->getId()}";
+        $categoryId = $category->getId();
+
+        if ($categoryId === null) {
+            return $proceed($category);
+        }
+
+        $lockName = "category.{$categoryId}";
 
         if (!$this->lockService->acquireLock($lockName, $this->lockWaitTimeout)) {
             throw new \RuntimeException('A conflict occurred while saving the category. No changes were applied.');
