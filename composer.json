@@ -15,9 +15,9 @@
     ],
     "require": {
         "php": ">=5.6",
-        "magento/module-catalog": "^100|^101|^102",
+        "magento/module-catalog": "^100|^101|^102|^103",
         "snowio/magento2-lock": "^1.1.0",
-        "magento/framework": "^100|^101"
+        "magento/framework": "^100|^101|^102"
     },
     "autoload": {
         "files": [ "registration.php" ],
