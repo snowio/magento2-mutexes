@@ -1,5 +1,5 @@
 # Magento 2 Product Save Mutex
-##Description
+## Description
 Module that ensures mutual exclusion on product saves. The locking is applied on product skus thus 2 or more
 simultaneous saves on a product will result in one of the simultaneous save calls successfully saving the product
 and the rest failing with a `RuntimeException`.
