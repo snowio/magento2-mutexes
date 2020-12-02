@@ -8,8 +8,8 @@ use SnowIO\Lock\Api\LockService;
 
 class CategoryLinkRepositoryMutexPlugin
 {
-    private $lockService;
-    private $lockWaitTimeout;
+    private \SnowIO\Lock\Api\LockService $lockService;
+    private int $lockWaitTimeout;
 
     public function __construct(LockService $lockService, int $lockWaitTimeout)
     {

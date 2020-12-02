@@ -4,11 +4,15 @@ Module that ensures mutual exclusion on product saves. The locking is applied on
 simultaneous saves on a product will result in one of the simultaneous save calls successfully saving the product
 and the rest failing with a `RuntimeException`.
 
+## Magento Versions
+- `<= 2.3.x` use 2.x tags
+- `>= 2.4.x` use master
+
 ## Prerequisites
-* PHP 5.6 or newer
+* PHP 7.4 or newer
 * Composer  (https://getcomposer.org/download/).
-* `magento/framework` 100 or newer
-* `magento/module-catalog` 100, 101 or newer
+* `magento/framework` 103 or newer
+* `magento/module-catalog` 104 or newer
 * `snowio/magento2-lock` 1.0.0 or newer
 
 
