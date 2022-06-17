@@ -14,7 +14,7 @@
         }
     ],
     "require": {
-        "php": "^7.4",
+        "php": "^7.4||^8.1",
         "magento/module-catalog": "^104",
         "snowio/magento2-lock": "^1.1.0",
         "magento/framework": "^103"
