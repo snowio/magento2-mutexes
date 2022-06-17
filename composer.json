@@ -13,15 +13,6 @@
             "email": "joshdifabio@gmail.com"
         }
     ],
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://repo.packagist.com/ampersandhq/"
-        },
-        {
-            "packagist.org": false
-        }
-    ],
     "require": {
         "php": "^7.4||^8.1",
         "magento/module-catalog": "^104",
